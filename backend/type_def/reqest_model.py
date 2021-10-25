@@ -1,6 +1,7 @@
 from typing import List, Optional
 from pydantic import BaseModel
 
+
 class CreatePrimerRequest(BaseModel):
     name: str
     seq: str

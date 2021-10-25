@@ -20,6 +20,7 @@ app.add_middleware(
 
 app.include_router(primer.router)
 
+
 @app.get("/")
 def read_root():
-    return { "This is": "root" }
+    return {"This is": "root"}
