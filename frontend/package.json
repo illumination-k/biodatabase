@@ -1,0 +1,38 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "openapi_update": "curl localhost:8002/openapi.json > openapi.json",
+    "generate_openapi_types": "docker run --rm -it -v $(pwd):$(pwd) -w $(pwd) openapitools/openapi-generator-cli generate -g typescript-axios -i openapi.json -o ./src/types/openapi --additional-properties=supportsES6=true,modelPropertyNaming=original",
+    "openapi": "yarn openapi_update && yarn generate_openapi_types"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.5.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.4",
+    "@mui/material": "^5.0.4",
+    "@mui/styles": "^5.0.1",
+    "@types/recoil": "^0.0.9",
+    "axios": "^0.23.0",
+    "next": "11.1.2",
+    "next-auth": "^3.29.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-table": "^7.7.0",
+    "recoil": "^0.4.1",
+    "swr": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.32",
+    "eslint": "8.1.0",
+    "eslint-config-next": "11.1.2",
+    "typescript": "4.4.4"
+  }
+}
