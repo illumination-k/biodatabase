@@ -11,7 +11,7 @@ def get_postgres_url():
     if os.path.exists("/.dockerenv"):
         return "postgresql://postgres:postgres@postgres:5432/main"
 
-    return "postgresql://postgres:postgres@localhost:5432/main"
+    return "postgresql://postgres:postgres@localhost:5433/main"
 
 
 def create_engine() -> Engine:

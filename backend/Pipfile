@@ -4,11 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "*"
-sqlalchemy = "*"
+fastapi = "0.68.1"
+sqlalchemy = "1.4.23"
 bcrypt = "*"
 pyjwt = "*"
 psycopg2-binary = "*"
+pydantic = "1.8.2"
+pydantic_sqlalchemy = "0.0.9"
 
 [dev-packages]
 pytest = "*"

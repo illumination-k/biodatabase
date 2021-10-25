@@ -24,6 +24,6 @@ class Primer(Base):
     seq = Column(String)
     gc = Column(Float)
     tm = Column(Float)
-    aliases = Column(ARRAY, nullable=True)
+    aliases = Column(ARRAY(String), nullable=True)
     note = Column(String, nullable=True)
     description = Column(TEXT, nullable=True)
