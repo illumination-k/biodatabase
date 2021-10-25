@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+sqlalchemy = "*"
+bcrypt = "*"
+pyjwt = "*"
+psycopg2-binary = "*"
+
+[dev-packages]
+pytest = "*"
+uvicorn = "*"
+alembic = "*"
+
+[requires]
+python_version = "3.9"
