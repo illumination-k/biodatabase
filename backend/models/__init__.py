@@ -1,7 +1,6 @@
 from sqlalchemy import Column
 from sqlalchemy.orm import relationship, scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.sql.expression import null
 from sqlalchemy.sql.sqltypes import ARRAY, Float, Integer, String, TEXT
 
 from .utils import create_engine
