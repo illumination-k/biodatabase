@@ -45,3 +45,7 @@ def search_primers(*, session: Session, words: Optional[str]):
             )
 
     return [PrimerModel.from_orm(q) for q in queries.all()]
+
+
+def get_primer_by_seq(db: Session, seq: str) -> Optional[Primer]:
+    return db.query(Primer).filter(Primer.seq == seq).first()
