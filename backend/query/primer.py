@@ -5,7 +5,7 @@ from sqlalchemy.sql.elements import or_
 from type_def.reqest_model import CreatePrimerRequest
 from models import Primer
 from type_def.orm import PrimerModel
-from utils.primer import calc_gc, calc_tm
+from utils.primer import calc_gc, calc_tm, kmerlize
 
 
 def create_primer(*, session: Session, req: CreatePrimerRequest) -> Optional[Primer]:
@@ -48,4 +48,10 @@ def search_primers(*, session: Session, words: Optional[str]):
 
 
 def get_primer_by_seq(db: Session, seq: str) -> Optional[Primer]:
-    return db.query(Primer).filter(Primer.seq == seq).first()
+    seqs = kmerlize(seq, k=15)
+    q = db.query(Primer)
+    
+    for seq in seqs:
+        q.filter(getattr(Primer, "seq").contains(seq))
+        
+    return q.all()

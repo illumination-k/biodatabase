@@ -40,7 +40,7 @@ class User(Base):
     last_name = Column(String)
 
     # optional information
-    picture = Column(LargeBinary)
+    picture = Column(LargeBinary, nullable=True)
 
     # permission
     active = Column(Boolean)
